@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+    <style>
+        #p p{
+            font-size: 28px;
+        }
+        .mj h3{
+            font-size: 24px;
+        }
+        .mo p{
+            font-size: 23px;
+        }
+        .mj h3{
+            font-size: 26px;
+        }
+        .student text{
+            font-size: 18.7px;
+            
+        }
+        .student #title2{
+            font-size: 18.5px;
+        }
+        .teacher text{
+            font-size: 18.7px;
+        }
+        iframe{
+    margin-top: -20px;
+    margin-left: -10px;
+    width: 170%;
+    height: 130%;
+    border: none;
+    box-shadow: none;
+}
+.logo iframe{
+    width: 115%;
+    height: 115%;
+}  
+    </style>
+</head>
+<body>
+    <script src="./js/script.js" defer></script>
+    <header>
+    <div class="con">
+    <div class="main">
+        <div class="logo">
+            <img src="./img/callge.svg" alt="callge">
+        </div>
+        <div class="head-text">
+            <svg  viewBox="0 0 100 100" width="100%" height="100%" >
+                <text text-anchor="middle" stroke= "#4E94C5"  x="60%" y="40%">
+                    الجامعة التقنية الوسطى
+                </text>
+                <text class="text-below" text-anchor="middle" x="60%" y="80%" >
+                    الكلية التقنية الهندسية الكهربائية </text>
+            </svg>
+        </div>
+
+        <div class="logo"><iframe scrolling="no" src="m1"></iframe></div>
+    </div>
+    <div class="sub-text"><p>قسم هندسة تكنولوجيا الأمن السيبراني</p></div>
+</div>
+</header>
+        <main>
+        <div class="con">
+            <div class="apper">
+                <div class="list-card">
+                <div class="mj">
+                        <div dir="rtl" class="card list-card">
+                            <div id="p"><h3>وقت بدأ المحاضرات </h3>
+                                <p>8:30 - 10:30</p>
+                                <p>10:30 - 12:30</p>
+                                <p>12:30 - 2:30</p>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="list-card mo">
+                </div>
+            </div>
+        </div>
+        </main>
+        <script>
+    setInterval(()=>{
+    let ph = document.querySelector(".mo");
+    let ph1 = document.querySelector(".mj");
+    fetch("../../new/home/api_3").then(response=>response.json()).then(data=>{
+        ph.innerHTML = "";
+        data.forEach(element => {
+        ph1.innerHTML = "";
+        ph.innerHTML += '<div dir="rtl" class="card"><div><h3>'+element.pha_1+'</h3><p>شعبة :  '+element.mzm+'</p><p>'+element.zmz+'</p>'+
+        '<p>'+element.zmz_mk+'</p><p>'+element.time+'</p>'+
+        '</div><div class="room"><p>'+element.h_1+'</p></div></div>';
+        });
+        });
+    }, 700);
+        </script>
+        <script>
+            setInterval(()=>{
+        fetch("../../new/home/apisc").then(response=>response.json()).then(data=>{
+        data.forEach(element => {
+            if(element.sc_1 == '1'){
+                    window.location.reload();
+                }
+        });
+        });
+            },1000);
+        </script>
+        <footer>
+            <div class="teacher">
+                <svg  viewBox="0 0 580 74.9" width="100%" hight="100%" >
+                        <text id="title1" opacity="1"  transform="translate(0 0)" text-anchor="start" x="43%" y="50%" class="title-text">: مشرف المشروع </text>
+                        <text id="boss1" textLength="200" transform="translate(0 0)" text-anchor="start" x="9%" y="50%"  dx="-2%">م.د. لؤي الصفار     -       م.م. رواء داود</text>
+
+
+        <animateTransform
+        id="a1"
+        href="#boss1"
+        xlink:href="#boss1"
+      attributeName="transform"
+      type="translate"
+      begin="0"
+      values="0 0;0 0;-280 0;-280 0;-280 0;0 0;0 0;0 0 ; 0 0;"
+      to="-280 0"
+      dur="12s"
+      repeatCount="indefinite"/> 
+
+    <animate 
+    id="a2"
+    xlink:href="#title1"
+  attributeName="opacity"
+  begin="0s"
+  values="1;1;0;0;0;1;1;1;1" dur="12s"
+  repeatCount="indefinite"
+   />
+        <!-- fill="freeze" -->
+                </svg>
+            </div>
+            <div class="student">
+                <svg  viewBox="0 0 580 74.9" width="100%" hight="100%" >
+                    <text id="title2" opacity="1"  transform="translate(0 0)" text-anchor="middle" x="50%" y="27%" class="title-text">: تم عمل المشروع بإدارت </text>
+                    <text id="s3"  transform="translate(0 0)" text-anchor="middle" x="71%" y="60%"  dx="-2%">  محمد المنتظر جمعه</text>
+                    <text id="s6" stroke= "#4E94C5" transform="translate(0 0)" text-anchor="middle"  x="69%" y="60%"  dx="-19%"> (mo.h.a17) </text>
+                    <text id="s1"  transform="translate(0 0)" text-anchor="middle" x="50%" y="60%"  dx="-20%">- احمد حيدر ابراهيم  - </text>
+                    <text id="s2"  transform="translate(0 0)" text-anchor="middle" x="32.4%" y="95%"  dx="40%">- علي رافد محسن</text>
+                    <text id="s4"  transform="translate(0 0)" text-anchor="start" x="50%" y="95%"  dx="-6.5%">- علي كريم عيدان</text>
+                    <text id="s5" transform="translate(0 0)" text-anchor="end" x="49%" y="95%"  dx="-6.7%">يوسف عبود عبد الهادي</text>
+                    <animate 
+                    id="b"
+                    xlink:href="#title2"
+                  attributeName="opacity"
+                  begin="0s"
+                  values="1;1;1;1;1;1;1;1;1;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1" 
+                  dur="12s"
+                  repeatCount="indefinite"
+                   />
+                   <animateTransform
+                   id="b1"
+                   href="#s1"
+                   xlink:href="#s1"
+                 attributeName="transform"
+                 type="translate"
+                 begin="0"
+                 values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                 to="280 0"
+                 dur="12s"
+                 repeatCount="indefinite"/> 
+                   <animateTransform
+                   id="b2"
+                   href="#s2"
+                   xlink:href="#s2"
+                 attributeName="transform"
+                 type="translate"
+                 begin="0"
+                 values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                 dur="12s"
+                 repeatCount="indefinite"/> 
+                   <animateTransform
+                   id="b3"
+                   href="#s3"
+                   xlink:href="#s3"
+                 attributeName="transform"
+                 type="translate"
+                 begin="0"
+                 values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;580 0;580 0;580 0;580 0;580 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                 dur="12s"
+                 repeatCount="indefinite"/>
+                 
+                   <animateTransform
+                   id="b4"
+                   href="#s4"
+                   xlink:href="#s4"
+                 attributeName="transform"
+                 type="translate"
+                 begin="0"
+                 values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                 dur="12s"
+                 repeatCount="indefinite"/> 
+                   <animateTransform
+                   id="b5"
+                   href="#s5"
+                   xlink:href="#s5"
+                 attributeName="transform"
+                 type="translate"
+                 begin="0"
+                 values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;580 0;580 0;580 0;580 0;580 0;580 0;580 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                 dur="12s"
+                 repeatCount="indefinite"/> 
+                 
+                 <animateTransform
+                 id="b3"
+                 href="#s6"
+                   xlink:href="#s6"
+                   attributeName="transform"
+                   type="translate"
+                   begin="0"
+                   values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;255 0;0 0;580 0;580 0;580 0;580 0;580 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                   dur="12s"
+                repeatCount="indefinite"/>
+            </svg>
+            </div>
+            
+        </footer>
+</body>
+</html>
